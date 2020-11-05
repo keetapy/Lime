@@ -44,6 +44,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthorizationService.cs" />
     <Compile Include="Services\Interfaces\IAuthorizationService.cs" />
+    <Compile Include="Services\Interfaces\ITestService.cs" />
+    <Compile Include="Services\testService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lime.DataAccess\Lime.DataAccess.csproj">
+      <Project>{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}</Project>
+      <Name>Lime.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
