@@ -8,18 +8,21 @@ using System.Threading.Tasks;
 
 namespace Lime.Business.Services
 {
-    public class testService
+    public class testService: ITestService
     {
-        IRepository repository;
+        private readonly IRepository _repository;
         public testService(IRepository repository)
         {
-            this.repository = repository;
+            _repository = repository;
+        }
+       
+        public object GetData()
+        {
+            return _repository.GetData();
+
         }
 
-       public object gettestdata()
-        {
-            return repository.GetData();
-        }
+       
 
         
     }

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lime.Business\Lime.Business.csproj" />
+    <ProjectReference Include="..\Lime.DataAccess\Lime.DataAccess.csproj" />
   </ItemGroup>
 
 

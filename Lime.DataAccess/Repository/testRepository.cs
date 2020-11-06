@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lime.DataAccess.Repository
 {
-    class testRepository:IRepository
+    public class testRepository:IRepository
     {
         public  object GetData()
         {

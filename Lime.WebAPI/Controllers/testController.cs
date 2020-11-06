@@ -1,4 +1,5 @@
 ﻿using Lime.Business.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace Lime.WebAPI.Controllers
 {
-    public class testController
+    public class testController: ITestService
     {
-        ITestService testService;
+        private readonly ITestService _testService;
         public testController(ITestService testService)
         {
-            this.testService = testService;
+            _testService = testService;
         }
-        public object gettestdata()
+        [Route("test/getdata")]
+        public object GetData()
         {
-            return testService.GetData();
+            return _testService.GetData();
         }
+
+        //[HttpGet("gettestdata")]
+        //public object gettestdata()
+        //{
+        //    return testService.GetData();
+        //}
     }
 }
