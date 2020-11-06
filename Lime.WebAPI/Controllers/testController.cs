@@ -1,4 +1,5 @@
 ﻿using Lime.Business.Services.Interfaces;
+using Lime.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Lime.WebAPI.Controllers
             _testService = testService;
         }
         [Route("test/getdata")]
-        public object GetData()
+        public List<Apartment> GetData()
         {
             return _testService.GetData();
         }

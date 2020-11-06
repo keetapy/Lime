@@ -1,4 +1,5 @@
 ﻿using Lime.Business.Services.Interfaces;
+using Lime.DataAccess.Entities;
 using Lime.DataAccess.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Lime.Business.Services
 {
-    public class testService: ITestService
+    public class TestService: ITestService
     {
         private readonly IRepository _repository;
-        public testService(IRepository repository)
+        public TestService(IRepository repository)
         {
             _repository = repository;
         }
        
-        public object GetData()
+        public List<Apartment> GetData()
         {
             return _repository.GetData();
 

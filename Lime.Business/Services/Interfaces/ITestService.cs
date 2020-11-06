@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lime.DataAccess.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Lime.Business.Services.Interfaces
 {
     public interface ITestService
     {
-        object GetData();
+        List<Apartment> GetData();
     }
 }

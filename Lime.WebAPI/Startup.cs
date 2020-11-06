@@ -29,8 +29,8 @@ namespace Lime.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IRepository, testRepository>();
-            services.AddTransient<ITestService, testService>();
+            services.AddTransient<IRepository, TestRepository>();
+            services.AddTransient<ITestService, TestService>();
             //services.AddTransient<ITestService, testController>();
             services.AddControllers();
         }
