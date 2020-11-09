@@ -1,13 +1,13 @@
-﻿using Lime.Business.Services.Interfaces;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lime.Business.Services
+namespace Lime.DataAccess.Entities
 {
-    class AuthorizationService: IAuthorizationService
+    public class Role: IdentityRole
     {
     }
 }
