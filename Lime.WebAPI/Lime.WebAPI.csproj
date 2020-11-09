@@ -11,6 +11,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Lime.Business\Lime.Business.csproj" />
     <ProjectReference Include="..\Lime.DataAccess\Lime.DataAccess.csproj" />
+    <ProjectReference Include="..\Lime.ViewModels\Lime.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 
