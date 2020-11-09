@@ -1,6 +1,7 @@
 ﻿using Lime.Business.Services.Interfaces;
 using Lime.DataAccess.Entities;
 using Lime.DataAccess.Repository.Interfaces;
+using Lime.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,14 @@ namespace Lime.Business.Services
             _repository = repository;
         }
        
-        public List<Apartment> GetData()
+        public List<ApartmentView> GetData()
         {
-            return _repository.GetData();
+            List<ApartmentView> tmp = new List<ApartmentView>();
+            foreach (Apartment item in _repository.GetData())
+            {
+                tmp.Add(new ApartmentView { Id = item.Id, Price = item.Price });
+            }
+            return tmp;
 
         }
 

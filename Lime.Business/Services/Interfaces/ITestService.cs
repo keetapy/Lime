@@ -1,4 +1,5 @@
 ﻿using Lime.DataAccess.Entities;
+using Lime.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Lime.Business.Services.Interfaces
 {
     public interface ITestService
     {
-        List<Apartment> GetData();
+        List<ApartmentView> GetData();
     }
 }

@@ -58,6 +58,10 @@
       <Project>{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}</Project>
       <Name>Lime.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lime.ViewModels\Lime.ViewModels.csproj">
+      <Project>{8b7c679b-9df9-4df6-aa06-cfa87ec273ea}</Project>
+      <Name>Lime.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
