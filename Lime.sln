@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.WebAPI", "Lime.WebAPI\Lime.WebAPI.csproj", "{FBE933E7-6439-4168-9EAC-087540F5D8EC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.DataAccess", "Lime.DataAccess\Lime.DataAccess.csproj", "{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.Business", "Lime.Business\Lime.Business.csproj", "{0558C264-6BC8-4E8F-BDE3-0B5FF5761078}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lime.WebAPI", "Lime.WebAPI\Lime.WebAPI.csproj", "{FBE933E7-6439-4168-9EAC-087540F5D8EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.ViewModels", "Lime.ViewModels\Lime.ViewModels.csproj", "{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.Business", "Lime.Business\Lime.Business.csproj", "{8C53AC5C-0EBB-477D-90E9-5FAB304D2C7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.DataAccess", "Lime.DataAccess\Lime.DataAccess.csproj", "{C90D2441-DAE0-4579-A1EC-577F74F8EA30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{FBE933E7-6439-4168-9EAC-087540F5D8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBE933E7-6439-4168-9EAC-087540F5D8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBE933E7-6439-4168-9EAC-087540F5D8EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FBBFF7B-9F7F-4A1E-BD24-ED0864EE496C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0558C264-6BC8-4E8F-BDE3-0B5FF5761078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0558C264-6BC8-4E8F-BDE3-0B5FF5761078}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0558C264-6BC8-4E8F-BDE3-0B5FF5761078}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0558C264-6BC8-4E8F-BDE3-0B5FF5761078}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C53AC5C-0EBB-477D-90E9-5FAB304D2C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C53AC5C-0EBB-477D-90E9-5FAB304D2C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C53AC5C-0EBB-477D-90E9-5FAB304D2C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C53AC5C-0EBB-477D-90E9-5FAB304D2C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C90D2441-DAE0-4579-A1EC-577F74F8EA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C90D2441-DAE0-4579-A1EC-577F74F8EA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C90D2441-DAE0-4579-A1EC-577F74F8EA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C90D2441-DAE0-4579-A1EC-577F74F8EA30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

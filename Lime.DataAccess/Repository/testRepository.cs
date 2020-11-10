@@ -1,21 +1,55 @@
-﻿using Lime.DataAccess.Entities;
+﻿using Dapper;
+using Lime.DataAccess.Entities;
 using Lime.DataAccess.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Lime.DataAccess.Repository
 {
-    public class TestRepository : IRepository
+    class TestRepository:IRepository
     {
+        IDatabaseConnection _connectionString;
+        public TestRepository(IDatabaseConnection connection)
+        {
+            _connectionString = connection;
+        }
+       // public string connectionString { get; set; }
 
-        private string connectionString = @"Data Source=LAPTOP-8OT09GEB\SQLEXPRESS;Initial Catalog=ApartmentsDB;Integrated Security=True";
+        // private string connectionString = @"Data Source=LAPTOP-8OT09GEB\SQLEXPRESS;Initial Catalog=ApartmentsDB;Integrated Security=True";
+
+        /*public Apartment GetApartmentById(int id)
+        {
+            return GetData().FirstOrDefault(x => x.Id == id);
+        }*/
+
+        public async Task<List<Apartment>> GetData()
+        {
+            using (SqlConnection connection = new SqlConnection())
+            {
+                try
+                {
+                    connection.ConnectionString = _connectionString.ConnectionString;
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    connection.ConnectionString = _connectionString.ConnectionString;
+                }
+                SqlCommand Command = new SqlCommand();
+                //istal dapper
+                var result = await connection.QueryAsync<Apartment>("SELECT * FROM Apartments;",
+                     commandType: CommandType.Text);
+
+                return result.AsList();
+            }
+        }
+
         //DbProviderFactory dbProviderFactory = DbProviderFactories.GetFactory("System.Data.SqlClient");
-        public List<Apartment> GetData()
+        /*public List<Apartment> GetData()
         {
             List<Apartment> Apartments = new List<Apartment>();
             using (SqlConnection connection = new SqlConnection())
@@ -61,7 +95,6 @@ namespace Lime.DataAccess.Repository
 
                 }
                 return Apartments;
-            }
-        }
+            }*/
     }
 }

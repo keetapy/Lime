@@ -16,6 +16,12 @@ namespace Lime.WebAPI.Controllers
         {
             _testService = testService;
         }
+       /* [Route("test/GetApartmentById/{id:int}")]
+        public ApartmentView GetApartmentById(int id)
+        {
+            return _testService.GetApartmentById(id);
+        }
+       */
         [Route("test/getdata")]
         public List<ApartmentView> GetData()
         {
