@@ -1,11 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lime.DataAccess\Lime.DataAccess.csproj" />
+    <ProjectReference Include="..\Lime.ViewModels\Lime.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

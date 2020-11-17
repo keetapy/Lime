@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lime.WebAPI", "Lime.WebAPI\Lime.WebAPI.csproj", "{FBE933E7-6439-4168-9EAC-087540F5D8EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.ViewModels", "Lime.ViewModels\Lime.ViewModels.csproj", "{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lime.Business", "Lime.Business\Lime.Business.csproj", "{8CB741DF-B8BB-41E5-BC70-08AF1E8425FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.Business", "Lime.Business\Lime.Business.csproj", "{8CB741DF-B8BB-41E5-BC70-08AF1E8425FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lime.DataAccess", "Lime.DataAccess\Lime.DataAccess.csproj", "{8EFFC3F6-ACFF-46FD-BC4E-B1EC862CD7F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.DataAccess", "Lime.DataAccess\Lime.DataAccess.csproj", "{8EFFC3F6-ACFF-46FD-BC4E-B1EC862CD7F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime.ViewModels", "Lime.ViewModels\Lime.ViewModels.csproj", "{D1197165-50C2-49D9-B5F6-809BAD6C386D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{FBE933E7-6439-4168-9EAC-087540F5D8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBE933E7-6439-4168-9EAC-087540F5D8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBE933E7-6439-4168-9EAC-087540F5D8EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B7C679B-9DF9-4DF6-AA06-CFA87EC273EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CB741DF-B8BB-41E5-BC70-08AF1E8425FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CB741DF-B8BB-41E5-BC70-08AF1E8425FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CB741DF-B8BB-41E5-BC70-08AF1E8425FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{8EFFC3F6-ACFF-46FD-BC4E-B1EC862CD7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EFFC3F6-ACFF-46FD-BC4E-B1EC862CD7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EFFC3F6-ACFF-46FD-BC4E-B1EC862CD7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1197165-50C2-49D9-B5F6-809BAD6C386D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1197165-50C2-49D9-B5F6-809BAD6C386D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1197165-50C2-49D9-B5F6-809BAD6C386D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1197165-50C2-49D9-B5F6-809BAD6C386D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
