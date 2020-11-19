@@ -16,6 +16,7 @@ namespace Lime.Business
         static public void ConfigureServices(IServiceCollection services, string connectionString, IConfiguration configuration)
         {
             services.AddTransient<IAuthorizationService, AuthorizationService>();
+            services.AddTransient<IApartmentsService, ApartmentsService>();
             DataAccess.Startup.ConfigureServices(services, connectionString);
         }
     }
