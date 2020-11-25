@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Lime.DataAccess.Repository.Interfaces
 {
-    public interface IRepository
+    public interface IRepository<T>
     {
-        //Task<List<Apartment>> GetData();
+        Task<List<T>> Get();
     }
 }

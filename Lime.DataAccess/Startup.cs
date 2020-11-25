@@ -20,7 +20,15 @@ namespace Lime.DataAccess
                .AddEntityFrameworkStores<UsersDbContext>();
             /////////////////
             services.AddScoped<IDatabaseConnection>((context) => new DatabaseConnection(connectionString));
-            services.AddTransient<IRepository, UsersRepository>();
+            services.AddTransient<IApartmentRepository, ApartmentsRepository>();
+            services.AddTransient<IAmenitiesRepository, AmenitiesRepository>();
+            services.AddTransient<IApartmentsAddressesRepository, ApartmentAddressesRepository>();
+            services.AddTransient<IAmenitiesApartmentRepository, AmenitiesApartmentRepository>();
+            services.AddTransient<IInternetProvidersRepository, InternetProvidersRepository>();
+            services.AddTransient<IClientsRepository, ClientsRepository>();
+            services.AddTransient<IApartmentsTypesRepository, ApartmentTypesRepository>();
+            services.AddTransient<IDealTypesRepository, DealTypesRepository>();
+            services.AddTransient<IRentalDealsRepository, RentalDealsRepository>();
 
 
         }

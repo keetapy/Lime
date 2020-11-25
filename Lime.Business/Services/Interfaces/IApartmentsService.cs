@@ -8,6 +8,8 @@ namespace Lime.Business.Services.Interfaces
 {
     public interface IApartmentsService
     {
-        Task<List<GetApartmentView>> GetApartments();
+        //Task<List<GetApartmentView>> GetApartments();
+        Task<List<GetApartmentDapperView>> GetApartments();
+
     }
 }

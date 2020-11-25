@@ -21,7 +21,7 @@ namespace Lime.WebAPI.Controllers
             _apartmentsService = apartmentsService;
         }
         [HttpGet("get")]
-        public async Task<List<GetApartmentView>> GetApartments()
+        public async Task<List<GetApartmentDapperView>> GetApartments()
         {
             return await _apartmentsService.GetApartments();
         }
