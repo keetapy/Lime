@@ -10,6 +10,6 @@ namespace Lime.Business.Services.Interfaces
     {
         //Task<List<GetApartmentView>> GetApartments();
         Task<List<GetApartmentDapperView>> GetApartments();
-
+        Task<GetApartmentView> GetApartmentById(int id);
     }
 }

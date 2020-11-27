@@ -40,5 +40,12 @@ namespace Lime.Business.Services
             }
             return apartments;
         }
+        public async Task<GetApartmentView> GetApartmentById(int id)
+        {
+            var result = await _apartmentsRepository.GetById(id);
+            if (result == null)
+                throw new ApplicationException("Apartment not found.");
+            return result;
+        }
     }
 }

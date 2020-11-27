@@ -7,6 +7,7 @@ namespace Lime.ViewModels.Views
 {
     public class GetApartmentView
     {
+        public int Id { get; set; }
         public ApartmentAddressViewItem ApartmentAddress { get; set; }
         public string FlatNumber { get; set; }
         public string ApartmentType { get; set; }

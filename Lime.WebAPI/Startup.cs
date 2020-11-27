@@ -1,3 +1,4 @@
+using Lime.WebAPI.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -24,51 +25,6 @@ namespace Lime.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            #region jwt
-            //services.AddAuthorization(auth =>
-            //{
-            //    auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
-            //        .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-            //        .RequireAuthenticatedUser().Build());
-            //});
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            //})
-            //    .AddJwtBearer(cfg =>
-            //    {
-            //        cfg.RequireHttpsMetadata = false;
-            //        cfg.SaveToken = true;
-            //        cfg.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            ValidateIssuerSigningKey = true,
-            //            ValidateLifetime = true,
-            //            ValidIssuer = appSettings["JwtIssuer"],
-            //            ValidAudience = appSettings["JwtIssuer"],
-            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(appSettings["JwtKey"])),
-            //            ClockSkew = TimeSpan.Zero // remove delay of token when expire
-            //        };
-
-            //        cfg.Events = new JwtBearerEvents
-            //        {
-            //            OnMessageReceived = context =>
-            //            {
-            //                var accessToken = context.Request.Query["access_token"];
-
-            //                // If the request is for our hub...
-            //                var path = context.HttpContext.Request.Path;
-            //                if (!string.IsNullOrEmpty(accessToken) &&
-            //                    (path.StartsWithSegments("/transaction")))
-            //                {
-            //                    // Read the token out of the query string
-            //                    context.Token = accessToken;
-            //                }
-            //                return Task.CompletedTask;
-            //            }
-            //        };
-            //    });
-            #endregion
-
 
             services.AddAuthentication(options =>
             {
@@ -106,9 +62,9 @@ namespace Lime.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseMiddleware<GlobalErrorHandlingMiddleware>();
+            app.UseHttpsRedirection();
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 

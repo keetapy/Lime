@@ -10,5 +10,6 @@ namespace Lime.DataAccess.Repository.Interfaces
     public interface IApartmentRepository
     {
         Task<List<Apartment>> Get();
+        Task<GetApartmentView> GetById(int id);
     }
 }

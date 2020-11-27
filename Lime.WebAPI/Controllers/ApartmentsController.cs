@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Lime.Business.Services.Interfaces;
@@ -24,6 +25,12 @@ namespace Lime.WebAPI.Controllers
         public async Task<List<GetApartmentDapperView>> GetApartments()
         {
             return await _apartmentsService.GetApartments();
+        }
+        [HttpGet("getbyid/{id:int}")]
+        public async Task<GetApartmentView> GetApartmentsById(int id)
+        {
+           
+            return await _apartmentsService.GetApartmentById(id);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Lime.DataAccess.Entities;
 using Lime.DataAccess.Repository.Interfaces;
+using Lime.ViewModels.Views;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Data;
@@ -35,5 +36,6 @@ namespace Lime.DataAccess.Repository
                 return result.AsList();
             }
         }
+        
     }
 }

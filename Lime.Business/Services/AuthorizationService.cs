@@ -40,7 +40,7 @@ namespace Lime.Business.Services
             var result = await _userManager.CreateAsync(user, viewModel.Password);
             if (!result.Succeeded)
             {
-                throw new ApplicationException(result.Errors.FirstOrDefault()?.Description);
+                throw new Exception(result.Errors.FirstOrDefault()?.Description);
             }
             var appUser = _userManager.Users.SingleOrDefault(r => r.Email == viewModel.Email);
 
@@ -53,7 +53,7 @@ namespace Lime.Business.Services
             User identityUser = _userManager.Users.SingleOrDefault(x => x.NormalizedUserName == model.Email.ToUpper());
             if (identityUser == null)
             {
-                throw new ApplicationException("User not found.");
+                throw new Exception("User not found.");
             }
             var userResult = new UserAccountViewItem
             {
