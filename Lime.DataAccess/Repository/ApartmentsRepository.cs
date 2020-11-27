@@ -78,7 +78,7 @@ namespace Lime.DataAccess.Repository
                         },
                         InternetProvider = new InternetProviderViewItem
                         {
-                            Id = ip.Id,
+                            InternetProviderId = ip.Id,
                             Name = ip.Name,
                             Phone = ip.Phone,
                             Email = ip.Email
@@ -88,23 +88,12 @@ namespace Lime.DataAccess.Repository
                         Price = a.Price,
                         ApartmentSquare = a.ApartmentSquare,
                         DealType = dt.Name,
-                        Id = a.Id
+                        ApartmentId = a.Id
                     };
-                }, new {Id=id } ,splitOn: "Id, Id, Id, Id");
-                // var apartment = apartmentAll.FirstOrDefault(i=>i.Id==id);
-                if (apartment.AsQueryable().Count() == 0)
-                    return null;
-                return apartment.AsQueryable().First();
+                }, new {Id=id });
+                
+                return apartment.AsQueryable().FirstOrDefault();
             }
         }
-        // InternetProvidersRepository
-
-        // ClientsRepository
-
-        // ApartmentsTypesRepository
-        // DealTypesRepository
-        // ApartmentsAddressesRepository
-
-        // RentalDealsRepository
     }
 }
