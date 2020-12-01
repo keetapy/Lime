@@ -32,5 +32,10 @@ namespace Lime.WebAPI.Controllers
            
             return await _apartmentsService.GetApartmentById(id);
         }
+        [HttpPost("set")]
+        public async Task<List<GetApartmentDapperView>> SetApartments(List<SetApartmentsViewModel> viewModels)
+        {
+            return await _apartmentsService.SetApartments(viewModels);
+        }
     }
 }

@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Lime.ViewModels.ViewItems;
+using Lime.ViewModels.ViewModels;
+using Microsoft.Data.SqlClient.Server;
 
 namespace Lime.DataAccess.Repository
 {
@@ -90,21 +92,49 @@ namespace Lime.DataAccess.Repository
                         DealType = dt.Name,
                         Id = a.Id
                     };
-                }, new {Id=id } ,splitOn: "Id, Id, Id, Id");
-                // var apartment = apartmentAll.FirstOrDefault(i=>i.Id==id);
-                if (apartment.AsQueryable().Count() == 0)
-                    return null;
-                return apartment.AsQueryable().First();
+                }, new {Id=id } );
+                return apartment.AsQueryable().FirstOrDefault();
             }
         }
-        // InternetProvidersRepository
+       
+        public async Task<List<Apartment>> Set(List<SetApartmentsViewModel> setApartments)
+        {
+            using (SqlConnection connection = new SqlConnection())
+            {
+                try
+                {
+                    connection.ConnectionString = _connectionString.ConnectionString;
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    connection.ConnectionString = _connectionString.ConnectionString;
+                }
+               
+                var dt = new DataTable();
+                dt = SetColumns(dt);
+                foreach (var item in setApartments)
+                {
+                    dt.Rows.Add(item.Id,item.ApartmentTypeId,item.FlatNumber,item.Price,item.ApartmentSquare,item.Photo,item.InternetProviderId,item.DealTypeId);
 
-        // ClientsRepository
+                }
+                await connection.ExecuteAsync("dbo.NewApartmentSet", new { newSet = dt.AsTableValuedParameter("[dbo].[TempApartment]") }, commandType: CommandType.StoredProcedure);
+                return await Get();
+            }
+        }
+        private DataTable SetColumns(DataTable dt)
+        {
+            dt.Columns.Add(new DataColumn("Id", typeof(int)));
+            dt.Columns.Add(new DataColumn("ApartmentTypeId", typeof(int)));
+            dt.Columns.Add(new DataColumn("FlatNumber", typeof(string)));
+            dt.Columns.Add(new DataColumn("Price", typeof(double)));
+            dt.Columns.Add(new DataColumn("ApartmentSquare", typeof(int)));
+            dt.Columns.Add(new DataColumn("Photo", typeof(string)));
+            dt.Columns.Add(new DataColumn("InternetProviderId", typeof(int)));
+            dt.Columns.Add(new DataColumn("DealTypeId", typeof(int)));
 
-        // ApartmentsTypesRepository
-        // DealTypesRepository
-        // ApartmentsAddressesRepository
-
-        // RentalDealsRepository
+            return dt;
+        }
+        
     }
 }

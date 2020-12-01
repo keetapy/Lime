@@ -1,4 +1,5 @@
 ﻿using Lime.DataAccess.Entities;
+using Lime.ViewModels.ViewModels;
 using Lime.ViewModels.Views;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,6 @@ namespace Lime.DataAccess.Repository.Interfaces
     {
         Task<List<Apartment>> Get();
         Task<GetApartmentView> GetById(int id);
+        Task<List<Apartment>> Set(List<SetApartmentsViewModel> setApartments);
     }
 }

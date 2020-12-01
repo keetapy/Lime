@@ -1,14 +1,9 @@
 ﻿using Lime.Business.Services.Interfaces;
-using Lime.DataAccess.DbContext;
-using Lime.DataAccess.Entities;
-using Lime.DataAccess.Repository;
 using Lime.DataAccess.Repository.Interfaces;
-using Lime.ViewModels.ViewItems;
+using Lime.ViewModels.ViewModels;
 using Lime.ViewModels.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Lime.Business.Services
@@ -46,6 +41,27 @@ namespace Lime.Business.Services
             if (result == null)
                 throw new ApplicationException("Apartment not found.");
             return result;
+        }
+        public async Task<List<GetApartmentDapperView>> SetApartments(List<SetApartmentsViewModel> setApartments)
+        {
+            var result = await _apartmentsRepository.Set(setApartments);
+            List<GetApartmentDapperView> apartments = new List<GetApartmentDapperView>();
+            foreach (var apartment in result)
+            {
+                apartments.Add(new GetApartmentDapperView
+                {
+                    Id = apartment.Id,
+                    ApartmentAddressId = apartment.Id,
+                    ApartmentTypeId = apartment.ApartmentTypeId,
+                    FlatNumber = apartment.FlatNumber,
+                    Price = apartment.Price,
+                    ApartmentSquare = apartment.ApartmentSquare,
+                    Photo = apartment.Photo,
+                    InternetProviderId = apartment.InternetProviderId,
+                    DealTypeId = apartment.DealTypeId
+                });
+            }
+            return apartments;
         }
     }
 }
