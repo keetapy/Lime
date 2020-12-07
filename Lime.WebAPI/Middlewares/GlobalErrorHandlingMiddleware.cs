@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -9,9 +10,12 @@ namespace Lime.WebAPI.Middlewares
     public class GlobalErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
-        public GlobalErrorHandlingMiddleware(RequestDelegate request)
+        private readonly ILogger<GlobalErrorHandlingMiddleware> _logger;
+
+        public GlobalErrorHandlingMiddleware(RequestDelegate request, ILogger<GlobalErrorHandlingMiddleware> logger)
         {
             _next = request;
+            _logger = logger;
         }
         public async Task Invoke(HttpContext context)
         {
@@ -21,6 +25,7 @@ namespace Lime.WebAPI.Middlewares
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Something went wrong: {ex.Message}");
                 await HandleExceptionAsync(context, ex);
             }
         }
