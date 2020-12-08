@@ -29,7 +29,7 @@ namespace Lime.DataAccess
             services.AddTransient<IApartmentsTypesRepository, ApartmentTypesRepository>();
             services.AddTransient<IDealTypesRepository, DealTypesRepository>();
             services.AddTransient<IRentalDealsRepository, RentalDealsRepository>();
-
+            services.AddTransient<ILogsRepository, LogsRepository>();
 
         }
     }

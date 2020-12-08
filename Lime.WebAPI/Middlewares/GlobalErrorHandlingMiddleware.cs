@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Lime.Business.Services;
+using Lime.Business.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -9,18 +12,25 @@ namespace Lime.WebAPI.Middlewares
     public class GlobalErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
-        public GlobalErrorHandlingMiddleware(RequestDelegate request)
+        private  ILoggerFactory _loggerFactory;
+        private  ILoggerService _loggerService;
+        private  ILogger _logger;
+        public GlobalErrorHandlingMiddleware(RequestDelegate request )
         {
             _next = request;
         }
-        public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context, ILoggerFactory logger,ILoggerService loggerService)
         {
+            _loggerFactory = logger.Add(loggerService);
+            _logger = _loggerFactory.CreateLogger("Create");
+
             try
             {
                 await _next(context);
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Something went wrong: {ex.Message}");
                 await HandleExceptionAsync(context, ex);
             }
         }

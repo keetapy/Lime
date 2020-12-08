@@ -17,6 +17,7 @@ namespace Lime.Business
         {
             services.AddTransient<IAuthorizationService, AuthorizationService>();
             services.AddTransient<IApartmentsService, ApartmentsService>();
+            services.AddTransient<ILoggerService, LoggerService>();
             DataAccess.Startup.ConfigureServices(services, connectionString);
         }
     }
